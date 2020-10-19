@@ -3,6 +3,7 @@ package com.jsy.cal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -129,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.btnDiv :
                     number1 = EditText1.getText().toString();
-                    history = EditText1.getText().toString() + " / ";
+                    history = EditText1.getText().toString() + " ÷ ";
                     EditText2.setText(history);
                     EditText1.setText("");
 
@@ -143,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                     EditText1.setText(back_number.substring(0,back_number.length() - 1));
                     break;
 
-                case R.id.EditText1 :
+                case R.id.btnResult :
                     double result = 0;
                     Toast.makeText(MainActivity.this, "결과", Toast.LENGTH_SHORT).show();
                     number2 = EditText1.getText().toString();
@@ -157,6 +158,8 @@ public class MainActivity extends AppCompatActivity {
                     if(type == Add) {
                         result = d1 + d2;
                         EditText1.setText("" + result);
+                        Log.i("mytag","d1 : "+d1);
+                        Log.i("mytag","d2 : "+d2);
                     } else if (type == Sub) {
                         result = d1 - d2;
                         EditText1.setText("" + result);
@@ -180,7 +183,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             switch(v.getId()){
-                case R.id.btn0 : EditText1.setText("0"); break;
                 case R.id.btn1 : EditText1.setText(EditText2.getText().toString() + 1); break;
                 case R.id.btn2 : EditText1.setText(EditText2.getText().toString() + 2); break;
                 case R.id.btn3 : EditText1.setText(EditText2.getText().toString() + 3); break;

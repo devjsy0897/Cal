@@ -16,6 +16,7 @@
 
         <EditText
             android:id="@+id/EditText2"
+            android:hint="진행내용"
             android:layout_span="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
 
         <EditText
             android:id="@+id/EditText1"
+            android:hint="결과"
             android:layout_span="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

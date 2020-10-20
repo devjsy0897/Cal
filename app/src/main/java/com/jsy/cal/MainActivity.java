@@ -157,20 +157,31 @@ public class MainActivity extends AppCompatActivity {
 
                     if(type == Add) {
                         result = d1 + d2;
+                        if((result-Math.floor(result))==0){
+                            EditText1.setText("" + (int)result);
+                        }else
                         EditText1.setText("" + result);
                         Log.i("mytag","d1 : "+d1);
                         Log.i("mytag","d2 : "+d2);
                     } else if (type == Sub) {
                         result = d1 - d2;
-                        EditText1.setText("" + result);
+                        if((result-Math.floor(result))==0){
+                            EditText1.setText("" + (int)result);
+                        }else
+                            EditText1.setText("" + result);
                     }else if (type == Mul) {
                         result = d1 * d2;
-                        EditText1.setText("" + result);
+                        if((result-Math.floor(result))==0){
+                            EditText1.setText("" + (int)result);
+                        }else
+                            EditText1.setText("" + result);
                     }else if (type == Div) {
                         result = d1 / d2;
-                        EditText1.setText("" + result);
+                        if((result-Math.floor(result))==0){
+                            EditText1.setText("" + (int)result);
+                        }else
+                            EditText1.setText("" + result);
                     }
-
                     number1 = EditText1.getText().toString();
                     break;
 

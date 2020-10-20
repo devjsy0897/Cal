@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn7).setOnClickListener(numClick);
         findViewById(R.id.btn8).setOnClickListener(numClick);
         findViewById(R.id.btn9).setOnClickListener(numClick);
+        findViewById(R.id.btnDot).setOnClickListener(numClick);
 
 
 
@@ -140,13 +141,13 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btnBack :
 
                     String back_number = EditText1.getText().toString();
-                    Toast.makeText(MainActivity.this,back_number,Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this,back_number,Toast.LENGTH_SHORT).show();
                     EditText1.setText(back_number.substring(0,back_number.length() - 1));
                     break;
 
                 case R.id.btnResult :
                     double result = 0;
-                    Toast.makeText(MainActivity.this, "결과", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "결과", Toast.LENGTH_SHORT).show();
                     number2 = EditText1.getText().toString();
                     history = history + EditText1.getText().toString();
                     EditText2.setText(history);
@@ -154,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
                     d1 = Double.parseDouble(number1);
                     d2 = Double.parseDouble(number2);
 
-                    //number2 = EditText1.getText().toString();
                     if(type == Add) {
                         result = d1 + d2;
                         EditText1.setText("" + result);
@@ -183,16 +183,17 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             switch(v.getId()){
-                case R.id.btn1 : EditText1.setText(EditText2.getText().toString() + 1); break;
-                case R.id.btn2 : EditText1.setText(EditText2.getText().toString() + 2); break;
-                case R.id.btn3 : EditText1.setText(EditText2.getText().toString() + 3); break;
-                case R.id.btn4 : EditText1.setText(EditText2.getText().toString() + 4); break;
-                case R.id.btn5 : EditText1.setText(EditText2.getText().toString() + 5); break;
-                case R.id.btn6 : EditText1.setText(EditText2.getText().toString() + 6); break;
-                case R.id.btn7 : EditText1.setText(EditText2.getText().toString() + 7); break;
-                case R.id.btn8 : EditText1.setText(EditText2.getText().toString() + 8); break;
-                case R.id.btn9 : EditText1.setText(EditText2.getText().toString() + 9); break;
-                case R.id.btnDot : EditText1.setText(EditText2.getText().toString() + "."); break;
+                case R.id.btn0 : EditText1.setText(EditText1.getText().toString() + "0"); break;
+                case R.id.btn1 : EditText1.setText(EditText1.getText().toString() + "1"); break;
+                case R.id.btn2 : EditText1.setText(EditText1.getText().toString() + "2"); break;
+                case R.id.btn3 : EditText1.setText(EditText1.getText().toString() + "3"); break;
+                case R.id.btn4 : EditText1.setText(EditText1.getText().toString() + "4"); break;
+                case R.id.btn5 : EditText1.setText(EditText1.getText().toString() + "5"); break;
+                case R.id.btn6 : EditText1.setText(EditText1.getText().toString() + "6"); break;
+                case R.id.btn7 : EditText1.setText(EditText1.getText().toString() + "7"); break;
+                case R.id.btn8 : EditText1.setText(EditText1.getText().toString() + "8"); break;
+                case R.id.btn9 : EditText1.setText(EditText1.getText().toString() + "9"); break;
+                case R.id.btnDot : EditText1.setText(EditText1.getText().toString() + "."); break;
             }
         }
     };
@@ -200,117 +201,6 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
-
-/*
-    EditText edit1,edit2,edit3;
-    Button btnDot,btnAdd,btnMul,btnEq,btnSub,btnDiv,btnMinor,btnBack,btnAC;
-    TextView textResult;
-    Button[] numButtons = new Button[10];
-    Integer[] numBtnIDs = {R.id.btn0,R.id.btn1,R.id.btn2,R.id.btn3,R.id.btn4,R.id.btn5,
-            R.id.btn6,R.id.btn7,R.id.btn8,R.id.btn9};
-    Integer result;
-    String num1,num2;
-    int i;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setTitle("계산기");
-
-        edit1=(EditText)findViewById(R.id.EditText1);
-        edit2 = (EditText)findViewById(R.id.EditText2);
-        edit3 = (EditText)findViewById(R.id.EditText3);
-        btnDot = (Button)findViewById(R.id.btnDot);
-        btnAdd = (Button)findViewById(R.id.btnAdd);
-        btnMul = (Button)findViewById(R.id.btnMul);
-        btnEq = (Button)findViewById(R.id.btnEq);
-        btnSub  = (Button)findViewById(R.id.btnSub);
-        btnDiv  = (Button)findViewById(R.id.btnDiv);
-        btnMinor  = (Button)findViewById(R.id.btnMinor);
-        btnBack  = (Button)findViewById(R.id.btnBack);
-        btnAC  = (Button)findViewById(R.id.btnAC);
-        textResult = (TextView)findViewById(R.id.TV1);
-
-
-        for(i=0;i<numBtnIDs.length;i++){
-            numButtons[i] = (Button)findViewById(numBtnIDs[i]);
-        }
-        for(i=0;i<numBtnIDs.length;i++){
-            final int index;
-            index = i;
-
-            numButtons[index].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    switch (v.getId()){
-                        case R.id.btnAdd :
-                            edit2.isFocused(edit2.setText(btnAdd.getText()));
-
-                        case R.id.btn0 :
-                            if(edit2==null){ edit3.setText(edit3.getText().toString()+0); }
-                            else { edit1.setText(edit1.getText().toString() + 0); } break;
-                        case R.id.btn1 :
-                            if(edit2==null){ edit3.setText(edit3.getText().toString() + 1); }
-                            else { edit1.setText(edit1.getText().toString() + 1); } break;
-                    }
-                }
-            });
-        }
-
-
-
-
-
-
-
-
-
-
-        btnEq.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                String num1=edit1.getText().toString();
-                String num2=edit2.getText().toString();
-                String num3=edit3.getText().toString();
-                int result=0;
-                switch(num2){
-                    case "+":
-                        result=Integer.parseInt(num3) + Integer.parseInt(num1);
-                        Log.i("mytag",result+"");
-                        //Toast.makeText(getApplicationContext(),result+"",Toast.LENGTH_SHORT).show();
-                        textResult.setText(result+"");
-                        break;
-                    case "-":
-                        result=Integer.parseInt(num3) - Integer.parseInt(num1);
-                        Log.i("mytag",result+"");
-                        //Toast.makeText(getApplicationContext(),result+"",Toast.LENGTH_SHORT).show();
-                        textResult.setText(result+"");
-                        break;
-                    case "*":
-                        result=Integer.parseInt(num3) * Integer.parseInt(num1);
-                        Log.i("mytag",result+"");
-                        //Toast.makeText(getApplicationContext(),result+"",Toast.LENGTH_SHORT).show();
-                        textResult.setText(result+"");
-                        break;
-                    case "÷":
-                        result=Integer.parseInt(num3) / Integer.parseInt(num1);
-                        Log.i("mytag",result+"");
-                        //Toast.makeText(getApplicationContext(),result+"",Toast.LENGTH_SHORT).show();
-                        textResult.setText(result+"");
-                        break;
-
-                }
-
-                return false;
-
-            }
-        });
-
-
-    }
-}*/
 
 
 

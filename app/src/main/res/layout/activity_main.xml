@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/EditText1"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:layout_marginBottom="5dp"
             android:gravity="right"
             android:textColor="#FFFFFF"
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/row5"
-            android:textSize="30dp"
+            android:textSize="40dp"
             android:layout_marginBottom="30dp"
             android:gravity="right"
             android:textColor="#FFFFFF"/>
@@ -59,8 +59,8 @@
                 android:layout_height="match_parent"
                 android:text="C"
                 android:textSize="30dp"
-                android:background="@drawable/round_button"
-                android:textColor="#FF0000"
+                android:background="@drawable/c_button"
+                android:textColor="#FFFFFF"
                 /></LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
